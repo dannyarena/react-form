@@ -4,7 +4,7 @@ function App() {
 
   // "articoli" contiene l'array, setArticoli può modificare quell'array
   const [articoli, setArticoli] = useState(["Il mio primo articolo","Viaggio a Roma", "Cosa ho mangiato oggi"]);
-  const [nuovoTitolo, setNuovoTitolo] = useState("");
+  const [nuovoTitolo, setNuovoTitolo] = useState(""); //stato del form
 
   function handleSubmit(e) {
     e.preventDefault(); // impedisce il refresh

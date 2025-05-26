@@ -11,6 +11,13 @@ function App() {
     setArticoli([...articoli, nuovoTitolo]);  // aggiunge il nuovo articolo
     setNuovoTitolo(""); //svuota l'input
   }
+
+    // funzione per eliminare un articolo
+    function rimuoviArticolo(indexDaRimuovere) {
+      const nuoviArticoli = articoli.filter((_, index) => index !== indexDaRimuovere);
+      setArticoli(nuoviArticoli);
+    }
+
   return (
     <div>
       <h1>Lista articoli</h1>
@@ -18,7 +25,9 @@ function App() {
         {/* elenco che con il metodo .map mostra a schermo il contenuto dell'array */}
       <ul>
         {articoli.map((titolo, index) => (
-          <li key={index}>{titolo}</li>
+          <li key={index}>{titolo}
+          <button onClick={() => rimuoviArticolo(index)}>🗑</button>
+          </li>
         ))}
       </ul>
 

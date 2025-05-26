@@ -5,6 +5,12 @@ function App() {
   // "articoli" contiene l'array, setArticoli può modificare quell'array
   const [articoli, setArticoli] = useState(["Il mio primo articolo","Viaggio a Roma", "Cosa ho mangiato oggi"]);
   const [nuovoTitolo, setNuovoTitolo] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault(); // impedisce il refresh
+    setArticoli([...articoli, nuovoTitolo]);  // aggiunge il nuovo articolo
+    setNuovoTitolo(""); //svuota l'input
+  }
   return (
     <div>
       <h1>Lista articoli</h1>
@@ -16,7 +22,7 @@ function App() {
         ))}
       </ul>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
         type="text"
         value={nuovoTitolo}

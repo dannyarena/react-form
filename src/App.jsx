@@ -8,6 +8,13 @@ function App() {
   return (
     <div>
       <h1>Lista articoli</h1>
+
+        {/* elenco che con il metodo .map mostra a schermo il contenuto dell'array */}
+      <ul>
+        {articoli.map((titolo, index) => (
+          <li key={index}>{titolo}</li>
+        ))}
+      </ul>
     </div>
   )
 }
